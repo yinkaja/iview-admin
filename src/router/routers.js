@@ -39,7 +39,6 @@ export default [
     children: [
       {
         path: '/home',
-        name: 'home',
         meta: {
           hideInMenu: true,
           title: '首页',
@@ -56,7 +55,8 @@ export default [
     meta: {
       title: '文档',
       href: 'https://lison16.github.io/iview-admin-doc/#/',
-      icon: 'ios-book'
+      icon: 'ios-book',
+      hideInMenu: true
     }
   },
   {
@@ -64,7 +64,8 @@ export default [
     name: 'join',
     component: Main,
     meta: {
-      hideInBread: true
+      hideInBread: true,
+      hideInMenu: true
     },
     children: [
       {
@@ -103,7 +104,8 @@ export default [
     name: 'components',
     meta: {
       icon: 'logo-buffer',
-      title: '组件'
+      title: '组件',
+      hideInMenu: true
     },
     component: Main,
     children: [
@@ -222,7 +224,8 @@ export default [
     name: 'update',
     meta: {
       icon: 'md-cloud-upload',
-      title: '数据上传'
+      title: '数据上传',
+      access: ['super_admin']
     },
     component: Main,
     children: [
@@ -251,7 +254,8 @@ export default [
     name: 'excel',
     meta: {
       icon: 'ios-stats',
-      title: 'EXCEL导入导出'
+      title: 'EXCEL导入导出',
+      hideInMenu: true
     },
     component: Main,
     children: [
@@ -279,7 +283,8 @@ export default [
     path: '/tools_methods',
     name: 'tools_methods',
     meta: {
-      hideInBread: true
+      hideInBread: true,
+      hideInMenu: true
     },
     component: Main,
     children: [
@@ -299,7 +304,8 @@ export default [
     path: '/i18n',
     name: 'i18n',
     meta: {
-      hideInBread: true
+      hideInBread: true,
+      hideInMenu: true
     },
     component: Main,
     children: [
@@ -318,7 +324,8 @@ export default [
     path: '/error_store',
     name: 'error_store',
     meta: {
-      hideInBread: true
+      hideInBread: true,
+      hideInMenu: true
     },
     component: Main,
     children: [
@@ -357,7 +364,8 @@ export default [
     path: '/directive',
     name: 'directive',
     meta: {
-      hideInBread: true
+      hideInBread: true,
+      hideInMenu: true
     },
     component: Main,
     children: [
@@ -394,7 +402,6 @@ export default [
         path: 'level_2_2',
         name: 'level_2_2',
         meta: {
-          access: ['super_admin'],
           icon: 'md-funnel',
           showAlways: true,
           title: '二级-2'
@@ -429,6 +436,93 @@ export default [
           title: '二级-3'
         },
         component: () => import('@/view/multilevel/level-2-3.vue')
+      }
+    ]
+  },
+  {
+    path: '/device',
+    name: '场景管理',
+    meta: {
+      icon: 'md-menu',
+      title: '场景管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'myScene',
+        name: '我的地图',
+        meta: {
+          icon: 'md-funnel',
+          title: '我的地图'
+        },
+        component: () => import('@/view/device/myScene.vue')
+      },
+      {
+        path: 'deviceList',
+        name: '我的设备',
+        meta: {
+          icon: 'md-funnel',
+          title: '我的设备'
+        },
+        component: () => import('@/view/device/deviceList.vue')
+      }
+    ]
+  },
+  {
+    path: '/monitor',
+    name: '健康检测',
+    meta: {
+      icon: 'md-menu',
+      title: '健康检测'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'myData',
+        name: '我的健康数据',
+        meta: {
+          icon: 'md-funnel',
+          title: '我的健康数据'
+        },
+        component: () => import('@/view/monitor/myData.vue')
+      },
+      {
+        path: 'health',
+        name: '健康小常识',
+        meta: {
+          icon: 'md-funnel',
+          title: '健康小常识'
+        },
+        component: () => import('@/view/monitor/health.vue')
+      }
+    ]
+  },
+  {
+    path: '/warn',
+    name: '健康预警',
+    meta: {
+      icon: 'md-menu',
+      title: '健康预警'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'alertList',
+        name: '实时预警',
+        meta: {
+          icon: 'md-funnel',
+          title: '实时预警'
+        },
+        component: () => import('@/view/warn/alertList.vue')
+      },
+      {
+        path: 'historyData',
+        name: '预警统计',
+        meta: {
+          icon: 'md-funnel',
+          title: '预警统计'
+        },
+        component: () => import('@/view/warn/historyData.vue')
       }
     ]
   },

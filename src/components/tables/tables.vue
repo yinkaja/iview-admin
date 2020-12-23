@@ -37,6 +37,10 @@
       <slot name="header" slot="header"></slot>
       <slot name="footer" slot="footer"></slot>
       <slot name="loading" slot="loading"></slot>
+<!--      <template slot-scope="{ row, index }" slot="action">-->
+<!--        <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">View</Button>-->
+<!--        <Button type="error" size="small" @click="remove(index)">Delete</Button>-->
+<!--      </template>-->
     </Table>
     <div v-if="searchable && searchPlace === 'bottom'" class="search-con search-con-top">
       <Select v-model="searchKey" class="search-col">
@@ -152,6 +156,15 @@ export default {
     }
   },
   methods: {
+    // show (index) {
+    //   this.$Modal.info({
+    //     title: 'User Info',
+    //     content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
+    //   })
+    // },
+    // remove (index) {
+    //   this.data6.splice(index, 1)
+    // },
     suportEdit (item, index) {
       item.render = (h, params) => {
         return h(TablesEdit, {

@@ -15,6 +15,13 @@
       </Input>
     </FormItem>
     <FormItem>
+      <Select v-model="form.role" placeholder="选择角色">
+        <Option value="tenant">普通用户</Option>
+        <Option value="adminUser">管理员</Option>
+        <Option value="admin">超级管理员</Option>
+      </Select>
+    </FormItem>
+    <FormItem>
       <Button @click="handleSubmit" type="primary" long>登录</Button>
     </FormItem>
   </Form>

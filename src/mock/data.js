@@ -8,8 +8,11 @@ export const getTableData = req => {
   let tableData = []
   doCustomTimes(5, () => {
     tableData.push(Mock.mock({
-      name: '@name',
-      email: '@email',
+      // name: '@name',
+      // email: '@email',
+      // createTime: '@date'
+      name: Random.increment(10),
+      email: Random.csentence(10, 13),
       createTime: '@date'
     }))
   })
